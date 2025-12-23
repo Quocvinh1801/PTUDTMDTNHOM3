@@ -6,8 +6,8 @@
     --bs-light-blue: #e0f2ff;
     --text-dark: #1a202c;
     --text-gray: #64748b;
-    --top-bar-height: 50px;
-    --header-height: 80px;
+    --top-bar-height: 40px;
+    --header-height: 70px;
 }
 
 * {
@@ -21,9 +21,31 @@ body {
     color: var(--text-gray);
     font-family: "Roboto", sans-serif;
     line-height: 1.6;
-    overflow-x: hidden;
+    overflow: hidden;
     position: relative;
-    height: 150vh;
+    height: 100vh;
+    margin: 0;
+}
+
+/* --- SCROLLABLE CONTENT AREA --- */
+.scrollable-content {
+    position: fixed;
+    top: calc(var(--top-bar-height) + var(--header-height)); /* 110px */
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background-color: #fff;
+}
+
+.scrollable-content > main {
+    padding: 0;
+    margin: 0;
+}
+
+.scrollable-content > main > *:first-child {
+    margin-top: 0 !important;
 }
 
 /* --- TOP BAR --- */
